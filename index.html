@@ -1,132 +1,1172 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Peyya - B2B payments that actually works.</title>
-  <meta name="description" content="Peyya B2B Payments">
-  <meta charset="UTF-8">
-  <meta name="theme-color" content="#ffc7c2">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <!-- Link to custom font definitions -->
-  <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['"Anybody Variable"', 'sans-serif'],
-            sans: ['"Söhne"', 'sans-serif'],
-            mono: ['"Söhne Mono"', 'monospace'],
-          },
-          fontSize: {
-            'display-hero': ['4.5rem', { lineHeight: '1.1' }],
-            'display-xl': ['3.75rem', { lineHeight: '1.15' }],
-            'h1': ['3rem', { lineHeight: '1.2' }],
-            'h2': ['2.25rem', { lineHeight: '1.25' }],
-            'h3': ['1.875rem', { lineHeight: '1.3' }],
-            'h4': ['1.5rem', { lineHeight: '1.4' }],
-            'h5': ['1.25rem', { lineHeight: '1.5' }],
-            'h6': ['1.125rem', { lineHeight: '1.6' }],
-            'body-lg': ['1.125rem', { lineHeight: '1.75' }],
-            'body': ['1rem', { lineHeight: '1.75' }],
-            'body-sm': ['0.875rem', { lineHeight: '1.6' }],
-            'caption': ['0.75rem', { lineHeight: '1.4' }],
-            'button': ['0.875rem', { lineHeight: '1.5', letterSpacing: '0.02em' }],
-            'code': ['0.875rem', { lineHeight: '1.5' }],
-          },
-          fontStyle: {
-             italic: 'italic',
-             normal: 'normal',
-           },
-          colors: {
-            peyya: {
-              DEFAULT: '#ffc7c2',
-              50: '#fff6f5',
-              100: '#ffeceb',
-              200: '#ffd9d6',
-              300: '#ffc7c2',
-              400: '#E2F7C2',
-              500: '#ffa299',
-              600: '#cc817a',
-              700: '#99615c',
-              800: '#66403d',
-              900: '#33201f'            },
-            gray: {
-              900: 'oklch(0.138 0.002 263.38)'
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <!-- PostHog - Analytics -->
-  <script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_jyjLCwFCnw1l0pTjPLgVYA4O0jg4LOqSBh1zeHyB0Td',{api_host:'https://eu.i.posthog.com'})
-  </script>
-  <!-- Journy.io - PLG -->
-  <script>!function () {
-      var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
-        analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware", "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"]; analytics.factory = function (e) { return function () { if (window.analytics.initialized) return window.analytics[e].apply(window.analytics, arguments); var i = Array.prototype.slice.call(arguments); i.unshift(e); analytics.push(i); return analytics } }; for (var i = 0; i < analytics.methods.length; i++) { var key = analytics.methods[i]; analytics[key] = analytics.factory(key) } analytics.load = function (key, i) { var t = document.createElement("script"); t.type = "text/javascript"; t.async = !0; t.src = "https://journy.getpunch.io/frontend/analytics.js/v1/" + key + "/analytics.min.js"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(t, n); analytics._loadOptions = i }; analytics._writeKey = "01HABZ47RKB59120919Y0CJZPS"; analytics._cdn = "https://journy.getpunch.io/frontend"; analytics.SNIPPET_VERSION = "4.16.1";
-        analytics.load("01JGB8XSKP6DB88N8JVDKKM2FX");
-        analytics.page();
-      }
-    }();
-  </script>
-  <script defer src="https://eu.umami.is/script.js" data-website-id="6b544a69-f57c-44e5-8e0c-5dbb1e945ede"></script>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peyya — Payments that know when to move</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5efe8;
+    --bg-alt: #ede5d9;
+    --bg-dark: #14130f;
+    --bg-dark-soft: #1e1c17;
+    --ink: #14130f;
+    --ink-soft: #3d3b35;
+    --ink-muted: #706d64;
+    --ink-inverse: #f5efe8;
+    --ink-inverse-soft: #a8a396;
+    --line: #d8d1c1;
+    --line-soft: #e4ddcd;
+    --line-dark: #2a2822;
+    --accent: #FFA299;
+    --accent-deep: #E87868;
+    --accent-soft: #FFD4CC;
+    --paper: #faf6f1;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter Tight', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
 
-<body class="font-sans antialiased bg-neutral-50 text-neutral-950 dark:bg-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
-  <div class="bg-punch dark:bg-gray-900">
-    <header class="bg-punch dark:bg-gray-900">
-          <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-            <div class="flex lg:flex-1">
-              <a href="#" class="-m-1.5 p-1.5 flex items-center">
-                <span class="sr-only">Peyya</span>
-                <!-- Inline SVG Logo -->
-                <svg style="shape-rendering: crispEdges;" class="h-8 w-auto stroke-current text-gray-900 dark:text-white" id="Peyya_Logo" xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" version="1.2" viewBox="0 0 256 256">
-                <g id="Light">
-                    <g id="Black_line">
-                      <path d="M50,85l78-43,78,43v86l-78,43-78-43v-86Z" fill="none" stroke-miterlimit="42.7" stroke-width="18"/>
-                      <path d="M128,128l78-43M128,128l-78-43M128,128v86M128,128l-78,43M128,128l78,43M128,128V42" fill="none" stroke-miterlimit="42.7" stroke-width="18"/>
-                    </g>
-                </g>
-                </svg>
-                <!-- End Inline SVG Logo -->
-                <span class="ml-1 font-display text-h4 font-semibold text-gray-900 dark:text-white relative top-0.5">Peyya</span>
-              </a>
-            </div>
-          </nav>
-        </header>
-  
-    <div class="relative isolate px-6 pt-14 lg:px-8">
-      <div class="mx-auto max-w-2xl py-12 sm:py-24 lg:py-24">
-        <div class="text-center">
-          <h1 class="font-sans text-h1 tracking-tight text-gray-900 dark:text-white">
-            Ripping Up the Rulebook for B2B Payments
-          </h1>
-          <p class="mt-6 sm:text-justify text-left text-body text-gray-900 dark:text-gray-300">SaaS, marketplaces, and media nailed payments ages ago—so why is B2B still stuck in the stone age? Construction, Logistics, Real Estate—you deserve better. <b>We're tearing down the clunky systems, the delays, and the headaches.</b></p>
-          <p class="mt-6 sm:text-justify text-left text-body text-gray-900 dark:text-gray-300">Think AR/AP automation that <i>actually works</i>, escrow that's <i>intelligent</i>, and project payments so smooth they feel like magic. Now add 24/7 availability, cross-border capabilities with zero friction, transactions so dirt cheap they're almost funny, and programmable money ready to work the way <i>you</i> need — not the banks.
-            <p class="mt-6 sm:text text-left text-body text-gray-900 dark:text-gray-300">This isn't evolution—it's a revolution. <b>Stay tuned</b>.</p>
-          </p>
-          <div class="mt-10 flex items-center justify-center gap-x-6">
-            <!-- Cal.com link -->
-            <a href="https://cal.com/danadalis" target="_blank" rel="noopener noreferrer" class="inline-block rounded-md bg-gray-900 px-3.5 py-2.5 font-sans text-button font-medium text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200">Ready to leave the stone age behind? Let's talk.</a>
-            <!-- End Cal.com link -->
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  }
+
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* NAV */
+  nav {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    z-index: 10;
+  }
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    font-style: italic;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .logo::after { content: '.'; color: var(--accent-deep); }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    align-items: center;
+  }
+  .nav-links a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent-deep); }
+  .nav-links a.nav-cta {
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 9px 18px;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .nav-links a.nav-cta:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+  @media (max-width: 768px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+  }
+
+  /* HERO */
+  .hero {
+    padding: 140px 0 160px;
+    position: relative;
+  }
+  .hero-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.1s forwards;
+  }
+  .hero-label::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--accent-deep);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(48px, 8vw, 112px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin-bottom: 40px;
+    max-width: 14ch;
+    opacity: 0;
+    animation: fadeUp 1s 0.25s forwards;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent-deep);
+  }
+  .hero-sub {
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.45;
+    color: var(--ink-soft);
+    max-width: 54ch;
+    margin-bottom: 56px;
+    opacity: 0;
+    animation: fadeUp 1s 0.45s forwards;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s 0.6s forwards;
+  }
+  .btn-primary {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 16px 32px;
+    background: var(--ink);
+    color: var(--paper);
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--ink);
+    transform: translateY(-1px);
+  }
+  .btn-primary::after {
+    content: '→';
+    transition: transform 0.25s;
+  }
+  .btn-primary:hover::after { transform: translateX(4px); }
+  .btn-text {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+    transition: all 0.2s;
+  }
+  .btn-text:hover {
+    color: var(--accent-deep);
+    border-bottom-color: var(--accent-deep);
+  }
+  .hero-ornament {
+    position: absolute;
+    top: 120px;
+    right: -40px;
+    width: 420px;
+    height: 420px;
+    pointer-events: none;
+    opacity: 0;
+    animation: fadeIn 1.5s 0.8s forwards;
+  }
+  .hero-ornament svg {
+    width: 100%;
+    height: 100%;
+    animation: drift 14s ease-in-out infinite;
+  }
+  @media (max-width: 1024px) {
+    .hero-ornament { display: none; }
+  }
+
+  /* SECTION BASE */
+  section {
+    padding: 120px 0;
+    position: relative;
+    border-top: 1px solid var(--line);
+  }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: counter(section, decimal-leading-zero);
+    counter-increment: section;
+    color: var(--accent-deep);
+  }
+  body { counter-reset: section; }
+  .section-label.dark { color: var(--ink-inverse-soft); }
+  .section-label.dark::before { color: var(--accent); }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 32px;
+    max-width: 18ch;
+  }
+  h2 em { font-style: italic; font-weight: 300; }
+
+  .lede {
+    font-size: clamp(17px, 1.3vw, 19px);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+  .lede + .lede { margin-top: 20px; }
+
+  /* PROBLEM */
+  .problem .container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 100px;
+    align-items: start;
+  }
+  .problem-mark {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(100px, 14vw, 180px);
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+    margin-top: -20px;
+  }
+  @media (max-width: 900px) {
+    .problem .container { grid-template-columns: 1fr; gap: 40px; }
+    .problem-mark { font-size: 100px; }
+  }
+
+  /* PILLARS */
+  .pillars { background: var(--bg-alt); }
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 80px;
+    border-top: 1px solid var(--line);
+  }
+  .pillar {
+    padding: 48px 40px 48px 0;
+    border-right: 1px solid var(--line);
+    position: relative;
+  }
+  .pillar:last-child { border-right: none; padding-right: 0; }
+  .pillar:not(:first-child) { padding-left: 40px; }
+  .pillar-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-bottom: 28px;
+  }
+  .pillar h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .pillar p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  @media (max-width: 900px) {
+    .pillars-grid { grid-template-columns: 1fr; }
+    .pillar {
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+      padding: 40px 0;
+    }
+    .pillar:not(:first-child) { padding-left: 0; }
+    .pillar:last-child { border-bottom: none; }
+  }
+
+  /* HOW IT WORKS — TIMELINE */
+  .how-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    margin-bottom: 100px;
+    align-items: end;
+  }
+  .how-intro {
+    font-size: clamp(17px, 1.3vw, 19px);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 48ch;
+  }
+  @media (max-width: 900px) {
+    .how-header { grid-template-columns: 1fr; gap: 24px; }
+  }
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .timeline-col {
+    padding: 48px 48px 56px;
+    position: relative;
+  }
+  .timeline-col:first-child {
+    border-right: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .timeline-col:last-child {
+    background: linear-gradient(180deg, var(--paper) 0%, rgba(255, 212, 204, 0.15) 100%);
+  }
+  .timeline-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .timeline-head h4 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+  }
+  .timeline-head .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 20px;
+    padding: 22px 0;
+    position: relative;
+  }
+  .step::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 40px;
+    bottom: -22px;
+    width: 1px;
+    background: var(--line);
+  }
+  .step:last-child::before { display: none; }
+  .step-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-muted);
+    position: relative;
+    z-index: 2;
+  }
+  .step.release .step-dot {
+    background: var(--accent);
+    border-color: var(--accent-deep);
+    color: var(--ink);
+  }
+  .step-content { padding-top: 4px; }
+  .step-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-muted);
+    margin-bottom: 6px;
+  }
+  .step-title {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .step-detail {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .timeline-footer {
+    text-align: center;
+    margin-top: 56px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    letter-spacing: -0.01em;
+  }
+  .timeline-footer em {
+    color: var(--accent-deep);
+    font-style: italic;
+  }
+  @media (max-width: 900px) {
+    .timeline-grid { grid-template-columns: 1fr; }
+    .timeline-col:first-child {
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+    }
+    .timeline-col { padding: 32px 24px 40px; }
+  }
+
+  /* BOTH SIDES */
+  .sides { padding: 160px 0; }
+  .sides-headline {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    max-width: 16ch;
+    margin-bottom: 80px;
+  }
+  .sides-headline em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent-deep);
+  }
+  .sides-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+  .side-card {
+    padding: 40px 0;
+    border-top: 2px solid var(--ink);
+  }
+  .side-card.agents { border-top-color: var(--accent-deep); }
+  .side-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-muted);
+    margin-bottom: 20px;
+  }
+  .side-card h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+  .side-card h3 em { font-style: italic; font-weight: 300; }
+  .side-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+  .side-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .side-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    background: var(--paper);
+  }
+  .agents .side-tag {
+    border-color: var(--accent-soft);
+    background: rgba(255, 212, 204, 0.25);
+  }
+  @media (max-width: 900px) {
+    .sides-grid { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  /* PROTOCOLS */
+  .primitives { background: var(--bg-alt); }
+  .primitives-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 80px;
+    align-items: end;
+  }
+  .primitives-header p {
+    font-size: clamp(17px, 1.3vw, 19px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .protocols {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .protocol {
+    padding: 36px 28px;
+    border-right: 1px solid var(--line);
+    position: relative;
+    transition: background 0.3s;
+  }
+  .protocol:last-child { border-right: none; }
+  .protocol:hover { background: rgba(255, 162, 153, 0.08); }
+  .protocol-name {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .protocol-org {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .protocol-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  @media (max-width: 900px) {
+    .primitives-header { grid-template-columns: 1fr; gap: 24px; }
+    .protocols { grid-template-columns: 1fr 1fr; }
+    .protocol { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .protocol:nth-child(2n) { border-right: none; }
+    .protocol:last-child { border-bottom: none; }
+  }
+
+  /* DARK: PAYMENT ON PROOF */
+  .proof {
+    background: var(--bg-dark);
+    color: var(--ink-inverse);
+    border-top: none;
+    padding: 160px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .proof::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 162, 153, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .proof::after {
+    content: '';
+    position: absolute;
+    bottom: -300px;
+    left: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(255, 162, 153, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .proof .container { position: relative; z-index: 2; }
+  .proof h2 { color: var(--ink-inverse); max-width: 20ch; }
+  .proof h2 em {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 300;
+  }
+  .proof-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 60px;
+    align-items: start;
+  }
+  .proof-body p {
+    font-size: clamp(16px, 1.15vw, 18px);
+    line-height: 1.65;
+    color: var(--ink-inverse-soft);
+    margin-bottom: 20px;
+  }
+  .proof-body p.accent {
+    color: var(--ink-inverse);
+    font-family: var(--serif);
+    font-size: clamp(20px, 1.6vw, 26px);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+  }
+  .proof-body p.accent em {
+    color: var(--accent);
+    font-style: italic;
+  }
+  .proof-stack {
+    margin-top: 100px;
+    padding-top: 48px;
+    border-top: 1px solid var(--line-dark);
+  }
+  .proof-stack-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-inverse-soft);
+    margin-bottom: 32px;
+  }
+  .stack-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    align-items: center;
+  }
+  .stack-item {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: var(--ink-inverse);
+    opacity: 0.75;
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .stack-item:hover {
+    opacity: 1;
+    color: var(--accent);
+  }
+  .proof-tagline {
+    margin-top: 64px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--ink-inverse-soft);
+    max-width: 60ch;
+    line-height: 1.4;
+  }
+  @media (max-width: 900px) {
+    .proof-body { grid-template-columns: 1fr; gap: 24px; }
+    .stack-row { gap: 24px; }
+    .stack-item { font-size: 18px; }
+  }
+
+  /* CTA */
+  .cta {
+    padding: 180px 0;
+    text-align: center;
+    position: relative;
+  }
+  .cta h2 {
+    font-size: clamp(44px, 7vw, 96px);
+    margin: 0 auto 48px;
+    max-width: 20ch;
+    text-align: center;
+  }
+  .cta p {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 52ch;
+    margin: 0 auto 56px;
+    line-height: 1.55;
+  }
+  .cta-form {
+    display: flex;
+    max-width: 480px;
+    margin: 0 auto;
+    gap: 0;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+  }
+  .cta-form input {
+    flex: 1;
+    padding: 18px 20px;
+    border: none;
+    background: transparent;
+    font-family: var(--sans);
+    font-size: 15px;
+    color: var(--ink);
+    outline: none;
+  }
+  .cta-form input::placeholder { color: var(--ink-muted); }
+  .cta-form button {
+    padding: 18px 28px;
+    background: var(--ink);
+    color: var(--paper);
+    border: 1px solid var(--ink);
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .cta-form button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 60px 0 40px;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-links { display: flex; gap: 28px; }
+  .footer-links a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--accent-deep); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(10px, -15px) rotate(3deg); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#" class="logo">Peyya</a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#protocols">Protocols</a>
+      <a href="#proof">Proof</a>
+      <a href="#access" class="nav-cta">Get early access</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container" style="position: relative;">
+    <div class="hero-label">The logic layer for conditional commerce</div>
+    <h1>Payments that <em>know</em> when to move.</h1>
+    <p class="hero-sub">
+      Peyya is programmable payment logic for a world where both humans and agents transact. Conditional escrow, milestone releases, agent-to-agent commerce — built on the infrastructure you already trust.
+    </p>
+    <div class="hero-ctas">
+      <a href="#access" class="btn-primary">Get early access</a>
+      <a href="#how" class="btn-text">See how it works</a>
+    </div>
+
+    <div class="hero-ornament" aria-hidden="true">
+      <svg viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="210" cy="210" r="200" stroke="#d8d1c1" stroke-width="1" stroke-dasharray="2 6"/>
+        <circle cx="210" cy="210" r="140" stroke="#E87868" stroke-width="0.8" opacity="0.6"/>
+        <circle cx="210" cy="210" r="80" fill="#FFD4CC" opacity="0.4"/>
+        <circle cx="210" cy="210" r="80" stroke="#E87868" stroke-width="1"/>
+        <circle cx="210" cy="10" r="6" fill="#FFA299" stroke="#14130f" stroke-width="1"/>
+        <circle cx="410" cy="210" r="4" fill="#14130f"/>
+        <circle cx="210" cy="410" r="5" fill="#FFA299"/>
+        <circle cx="10" cy="210" r="4" fill="#14130f"/>
+        <circle cx="350" cy="70" r="3" fill="#14130f" opacity="0.5"/>
+        <circle cx="70" cy="350" r="3" fill="#14130f" opacity="0.5"/>
+        <circle cx="210" cy="70" r="5" fill="#E87868"/>
+        <circle cx="350" cy="210" r="5" fill="#14130f"/>
+        <text x="210" y="222" font-family="Fraunces" font-style="italic" font-size="36" fill="#14130f" text-anchor="middle">P</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section class="problem" id="problem">
+  <div class="container reveal">
+    <div>
+      <div class="section-label">The gap</div>
+      <div class="problem-mark">⟨⟩</div>
+    </div>
+    <div>
+      <h2>The missing piece between <em>paid</em> and <em>delivered</em>.</h2>
+      <p class="lede">
+        Payment infrastructure today is exceptional at moving money. Stripe, banks, and stablecoin rails settle billions every day, reliably and at scale. What they don't do — and were never designed to do — is encode the conditions around a payment.
+      </p>
+      <p class="lede">
+        So every platform, marketplace, and builder ends up writing the same logic from scratch: when should funds release? What counts as delivery? Who signs off? What happens if no one does? It's the same puzzle, solved badly, a thousand times.
+      </p>
+      <p class="lede" style="margin-top: 32px; color: var(--ink); font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.4;">
+        Peyya is that missing piece. The logic layer that sits on top of the rails you already use.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="pillars" id="pillars">
+  <div class="container reveal">
+    <div class="section-label">What Peyya is</div>
+    <h2>Three capabilities. <em>One</em> primitive.</h2>
+    <p class="lede" style="max-width: 60ch;">
+      Every Peyya flow — whether it settles a construction milestone or an agent's API call — composes from the same building blocks.
+    </p>
+
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-num">① Conditional</div>
+        <h3>Conditional payments</h3>
+        <p>Funds release when conditions are met — signatures, deliveries, timeouts, oracle events. You define the logic. Peyya executes it, exactly once, without a middleman deciding what counts.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">② Agentic</div>
+        <h3>Agent-to-agent commerce</h3>
+        <p>Native support for x402, A2A, AP2, MCP, and ACP. Agents can earn, spend, and split revenue — autonomously, across protocols, without a human approving each transaction.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">③ Non-custodial</div>
+        <h3>Non-custodial by design</h3>
+        <p>Peyya never touches the money. We add the logic on top of licensed, regulated infrastructure — so you get programmable control without taking on custody, compliance, or settlement risk. You own the logic. The rails own the rest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="container reveal">
+    <div class="how-header">
+      <div>
+        <div class="section-label">How it works</div>
+        <h2>Same logic. <em>Two worlds.</em></h2>
+      </div>
+      <p class="how-intro">
+        Three primitives — define, trigger, release — power every Peyya flow. Here's the same logic running a construction project in Stockholm and an agent transaction in the cloud.
+      </p>
+    </div>
+
+    <div class="timeline-grid">
+      <div class="timeline-col">
+        <div class="timeline-head">
+          <h4>A construction project</h4>
+          <span class="tag">Humans</span>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">①</div>
+          <div class="step-content">
+            <div class="step-label">Define</div>
+            <div class="step-title">Contract terms encoded</div>
+            <div class="step-detail">3 milestones · 10% retainage · 14-day approval timeout · BankID signers</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">②</div>
+          <div class="step-content">
+            <div class="step-label">Trigger</div>
+            <div class="step-title">Milestone signed</div>
+            <div class="step-detail">Contractor requests release → client signs with BankID → oracle confirms</div>
+          </div>
+        </div>
+
+        <div class="step release">
+          <div class="step-dot">③</div>
+          <div class="step-content">
+            <div class="step-label">Release</div>
+            <div class="step-title">Funds move on proof</div>
+            <div class="step-detail">90% to contractor · 10% held as retainage · all on-chain, verifiable</div>
           </div>
         </div>
       </div>
 
+      <div class="timeline-col">
+        <div class="timeline-head">
+          <h4>An agent transaction</h4>
+          <span class="tag">Agents</span>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">①</div>
+          <div class="step-content">
+            <div class="step-label">Define</div>
+            <div class="step-title">Capability escrow set</div>
+            <div class="step-detail">Task spec · max price · success criteria · revenue split pre-agreed</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot">②</div>
+          <div class="step-content">
+            <div class="step-label">Trigger</div>
+            <div class="step-title">API call completes</div>
+            <div class="step-detail">Agent delivers → x402 payment settles → verification returned</div>
+          </div>
+        </div>
+
+        <div class="step release">
+          <div class="step-dot">③</div>
+          <div class="step-content">
+            <div class="step-label">Release</div>
+            <div class="step-title">Split to all parties</div>
+            <div class="step-detail">Agent earns · platform takes fee · creator receives royalty — atomically</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="timeline-footer">
+      One contract in Stockholm. One API call in the cloud. <em>Same three primitives.</em>
+    </p>
+  </div>
+</section>
+
+<section class="sides" id="sides">
+  <div class="container reveal">
+    <div class="section-label">Built for both sides</div>
+    <h1 class="sides-headline">One primitive. Humans <em>and</em> agents. Any condition.</h1>
+
+    <div class="sides-grid">
+      <div class="side-card humans">
+        <div class="side-label">For humans</div>
+        <h3>Where <em>delivery</em> is real.</h3>
+        <p>Construction projects with staged milestones. Professional services with conditional deliverables. Marketplaces where buyers want protection and sellers want certainty. Peyya encodes the terms both sides already agreed to — and makes the money follow.</p>
+        <div class="side-tags">
+          <span class="side-tag">Construction</span>
+          <span class="side-tag">Marketplaces</span>
+          <span class="side-tag">Professional services</span>
+          <span class="side-tag">Milestones</span>
+          <span class="side-tag">Retainage</span>
+        </div>
+      </div>
+
+      <div class="side-card agents">
+        <div class="side-label">For agents</div>
+        <h3>Where the transaction <em>is</em> the code.</h3>
+        <p>Agents that earn for completing tasks. Streaming payments per API call. Capability escrow where delivery is machine-verifiable. Revenue splits across multiple agents and their creators. Peyya gives agent commerce the payment primitives it's missing today.</p>
+        <div class="side-tags">
+          <span class="side-tag">A2A commerce</span>
+          <span class="side-tag">Capability escrow</span>
+          <span class="side-tag">Streaming payments</span>
+          <span class="side-tag">Revenue splits</span>
+          <span class="side-tag">x402</span>
+        </div>
+      </div>
     </div>
   </div>
-  <!-- Flywheel.js - PLG -->
-  <script>
-    "use strict"; !function () { window.flywheel = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware", "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"].reduce((function (e, t) { return e[t] = function () { for (var e, i = [], n = 0; n < arguments.length; n++)i[n] = arguments[n]; (e = window.flywheel.preLibInitBuffer)[t] || (e[t] = []), window.flywheel.preLibInitBuffer[t].push(i) }, e }), { writeKey: "28a412a2-7a06-4808-bb4d-ff25a277a267", apiHost: "theflywheel.app", snippetVersion: "0.0.1", preLibInitBuffer: {} }); var e = document.createElement("script"); e.type = "text/javascript", e.async = !0, e.src = "https://cdn.theflywheel.app/flywheel.min.js"; var t = document.getElementsByTagName("script")[0]; t.parentNode && t.parentNode.insertBefore(e, t), window.flywheel.page() }();
-  </script>
-</body>
+</section>
 
+<section class="primitives" id="protocols">
+  <div class="container reveal">
+    <div class="primitives-header">
+      <div>
+        <div class="section-label">Protocols</div>
+        <h2>Every <em>agent commerce</em> protocol that matters.</h2>
+      </div>
+      <p>
+        Peyya speaks all five — so you don't have to pick a side. Build on Peyya and your payment logic stays portable as the ecosystem evolves.
+      </p>
+    </div>
+
+    <div class="protocols">
+      <div class="protocol">
+        <div class="protocol-name">x402</div>
+        <div class="protocol-org">Coinbase</div>
+        <div class="protocol-desc">HTTP-native micropayments for agents and APIs.</div>
+      </div>
+      <div class="protocol">
+        <div class="protocol-name">A2A</div>
+        <div class="protocol-org">Google</div>
+        <div class="protocol-desc">Agent-to-agent communication and task delegation.</div>
+      </div>
+      <div class="protocol">
+        <div class="protocol-name">AP2</div>
+        <div class="protocol-org">Google</div>
+        <div class="protocol-desc">Payment extension layered on top of A2A.</div>
+      </div>
+      <div class="protocol">
+        <div class="protocol-name">MCP</div>
+        <div class="protocol-org">Anthropic</div>
+        <div class="protocol-desc">Model Context Protocol for agent tool access.</div>
+      </div>
+      <div class="protocol">
+        <div class="protocol-name">ACP</div>
+        <div class="protocol-org">Stripe / OpenAI</div>
+        <div class="protocol-desc">Agentic Commerce Protocol for purchase flows.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof" id="proof">
+  <div class="container reveal">
+    <div class="section-label dark">On proof, not promise</div>
+    <h2>Payment on <em>proof</em>, not on trust.</h2>
+
+    <div class="proof-body">
+      <div>
+        <p class="accent">
+          Traditionally, money moves when someone <em>trusts</em> that the other side will deliver — or when a middleman holds the funds and decides who's right.
+        </p>
+        <p>
+          Both models break down when the other side is an agent. And both leave contractors, marketplaces, and platforms writing brittle custody logic they were never meant to own.
+        </p>
+      </div>
+      <div>
+        <p>
+          Peyya solves <em style="color: var(--accent); font-style: italic;">delivery-versus-payment</em> at the protocol level. Funds release when proof arrives — a BankID signature, an API response, an oracle event, another agent's confirmation. Money moves against evidence, not against a promise.
+        </p>
+        <p>
+          The result: no custody risk for you, no trust gap for the counterparty, no brittle middleware between them.
+        </p>
+      </div>
+    </div>
+
+    <div class="proof-stack">
+      <div class="proof-stack-label">Built on infrastructure you already trust</div>
+      <div class="stack-row">
+        <span class="stack-item">Stripe</span>
+        <span class="stack-item">DFNS</span>
+        <span class="stack-item">Base</span>
+        <span class="stack-item">Monerium</span>
+        <span class="stack-item">0xSplits</span>
+        <span class="stack-item">BankID</span>
+      </div>
+      <p class="proof-tagline">
+        We don't replace the rails you trust. We add the logic that removes the need to trust the other side.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="access">
+  <div class="container reveal">
+    <div class="section-label" style="justify-content: center; display: inline-flex;">Early access</div>
+    <h2>Building something that needs <em style="color: var(--accent-deep);">conditional payments</em>?</h2>
+    <p>
+      We're opening Peyya to a small group of design partners. Construction platforms, agent builders, marketplaces — if your payments have conditions, we'd like to talk.
+    </p>
+    <div class="cta-form">
+      <input type="email" placeholder="your@email.com" aria-label="Email">
+      <button type="button">Request access</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© 2026 Peyya<sup style="font-size: 0.7em; vertical-align: super; margin-left: 1px;">®</sup> · Stockholm</div>
+    <div class="footer-links">
+      <!-- Re-enable these when pages are live:
+      <a href="#">Docs</a>
+      <a href="#">Protocols</a>
+      <a href="#">Security</a>
+      <a href="#">Contact</a>
+      -->
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
 </html>
