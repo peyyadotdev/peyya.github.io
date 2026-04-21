@@ -4,6 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Peyya — Payments that know when to move</title>
+<meta name="description" content="Peyya is the logic layer for conditional commerce. Programmable escrow, milestone releases, and agent-to-agent payments on infrastructure you already trust.">
+<meta name="author" content="Peyya">
+
+<!-- Open Graph / Social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://peyya.dev/">
+<meta property="og:title" content="Peyya — Payments that know when to move">
+<meta property="og:description" content="The logic layer for conditional commerce. Programmable escrow, milestone releases, and agent-to-agent payments on infrastructure you already trust.">
+<meta property="og:site_name" content="Peyya">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Peyya — Payments that know when to move">
+<meta name="twitter:description" content="The logic layer for conditional commerce. Programmable escrow, milestone releases, and agent-to-agent payments on infrastructure you already trust.">
+
+<!-- Favicon (inline SVG — coral P on dark background) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314130f'/%3E%3Ctext x='32' y='46' font-family='Georgia, serif' font-style='italic' font-size='42' font-weight='500' fill='%23FFA299' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
@@ -773,6 +791,66 @@
     border-color: var(--accent);
     color: var(--ink);
   }
+  .cta-form button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+
+  .signup-message {
+    margin-top: 20px;
+    font-family: var(--mono);
+    font-size: 13px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  .signup-error {
+    color: var(--accent-deep);
+    padding: 12px 16px;
+    border: 1px solid var(--accent-soft);
+    background: rgba(255, 212, 204, 0.2);
+    border-radius: 2px;
+  }
+
+  .signup-success {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 48px 32px;
+    text-align: center;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    animation: fadeUp 0.6s ease forwards;
+  }
+  .success-mark {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .success-headline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .success-detail {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    max-width: none;
+    margin: 0;
+  }
 
   /* FOOTER */
   footer {
@@ -1134,9 +1212,19 @@
     <p>
       We're opening Peyya to a small group of design partners. Construction platforms, agent builders, marketplaces — if your payments have conditions, we'd like to talk.
     </p>
-    <div class="cta-form">
-      <input type="email" placeholder="your@email.com" aria-label="Email">
-      <button type="button">Request access</button>
+
+    <div id="signup-wrapper">
+      <form id="signup-form" class="cta-form" novalidate>
+        <input type="email" id="signup-email" placeholder="your@email.com" aria-label="Email" required>
+        <button type="submit" id="signup-button">Request access</button>
+      </form>
+      <p id="signup-error" class="signup-message signup-error" style="display: none;"></p>
+    </div>
+
+    <div id="signup-success" class="signup-success" style="display: none;">
+      <div class="success-mark">✓</div>
+      <p class="success-headline">Thank you.</p>
+      <p class="success-detail">We'll be in touch shortly. Keep an eye on your inbox.</p>
     </div>
   </div>
 </section>
@@ -1156,6 +1244,7 @@
 </footer>
 
 <script>
+  // Scroll reveal
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1166,6 +1255,74 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ========== SIGNUP FORM ==========
+  // Replace this URL with your Google Apps Script Web App URL after deployment
+  const SIGNUP_ENDPOINT = 'REPLACE_WITH_YOUR_APPS_SCRIPT_URL';
+
+  const form = document.getElementById('signup-form');
+  const emailInput = document.getElementById('signup-email');
+  const button = document.getElementById('signup-button');
+  const errorEl = document.getElementById('signup-error');
+  const wrapper = document.getElementById('signup-wrapper');
+  const successEl = document.getElementById('signup-success');
+
+  function showError(msg) {
+    errorEl.textContent = msg;
+    errorEl.style.display = 'block';
+  }
+
+  function clearError() {
+    errorEl.style.display = 'none';
+    errorEl.textContent = '';
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    clearError();
+
+    const email = emailInput.value.trim().toLowerCase();
+
+    if (!email) {
+      showError('Please enter your email address.');
+      return;
+    }
+    if (!isValidEmail(email)) {
+      showError('That doesn\'t look like a valid email. Try again.');
+      return;
+    }
+
+    button.disabled = true;
+    button.textContent = 'Requesting…';
+
+    try {
+      // Apps Script Web Apps don't allow custom headers on cross-origin POST,
+      // so we send form-encoded data (treated as simple request, no CORS preflight).
+      const body = new URLSearchParams();
+      body.append('email', email);
+      body.append('source', 'landing_page');
+      body.append('timestamp', new Date().toISOString());
+
+      const res = await fetch(SIGNUP_ENDPOINT, {
+        method: 'POST',
+        body: body,
+      });
+
+      if (!res.ok) throw new Error('Request failed');
+
+      // Success: hide form, show success state
+      wrapper.style.display = 'none';
+      successEl.style.display = 'block';
+    } catch (err) {
+      button.disabled = false;
+      button.textContent = 'Request access';
+      showError('Something went wrong. Please try again in a moment.');
+    }
+  });
 </script>
 
 </body>
