@@ -912,7 +912,7 @@
     <div class="nav-links">
       <a href="#how">How it works</a>
       <a href="#protocols">Protocols</a>
-      <a href="#proof">Proof</a>
+      <a href="#proof">Why it's safe</a>
       <a href="#access" class="nav-cta">Get early access</a>
     </div>
   </div>
@@ -983,7 +983,7 @@
       <div class="pillar">
         <div class="pillar-num">① Conditional</div>
         <h3>Conditional payments</h3>
-        <p>Funds release when conditions are met — signatures, deliveries, timeouts, oracle events. You define the logic. Peyya executes it, exactly once, without a middleman deciding what counts.</p>
+        <p>Funds release when conditions are met — a signature, a delivery, a deadline, an outside event. You define the logic. Peyya executes it, exactly once, without a middleman deciding what counts.</p>
       </div>
       <div class="pillar">
         <div class="pillar-num">② Agentic</div>
@@ -1007,7 +1007,7 @@
         <h2>Same logic. <em>Two worlds.</em></h2>
       </div>
       <p class="how-intro">
-        Three primitives — define, trigger, release — power every Peyya flow. Here's the same logic running a construction project in Stockholm and an agent transaction in the cloud.
+        Three steps — define, trigger, release — power every Peyya flow. Here's the same logic running a construction project in Stockholm and an agent transaction in the cloud.
       </p>
     </div>
 
@@ -1023,7 +1023,7 @@
           <div class="step-content">
             <div class="step-label">Define</div>
             <div class="step-title">Contract terms encoded</div>
-            <div class="step-detail">3 milestones · 10% retainage · 14-day approval timeout · BankID signers</div>
+            <div class="step-detail">3 milestones · 10% retainage · 14-day approval window · BankID signers</div>
           </div>
         </div>
 
@@ -1032,7 +1032,7 @@
           <div class="step-content">
             <div class="step-label">Trigger</div>
             <div class="step-title">Milestone signed</div>
-            <div class="step-detail">Contractor requests release → client signs with BankID → oracle confirms</div>
+            <div class="step-detail">Contractor requests release → client signs off with BankID</div>
           </div>
         </div>
 
@@ -1041,7 +1041,7 @@
           <div class="step-content">
             <div class="step-label">Release</div>
             <div class="step-title">Funds move on proof</div>
-            <div class="step-detail">90% to contractor · 10% held as retainage · all on-chain, verifiable</div>
+            <div class="step-detail">90% to contractor · 10% held as retainage · settled in SEK, fully traceable</div>
           </div>
         </div>
       </div>
@@ -1066,7 +1066,7 @@
           <div class="step-content">
             <div class="step-label">Trigger</div>
             <div class="step-title">API call completes</div>
-            <div class="step-detail">Agent delivers → x402 payment settles → verification returned</div>
+            <div class="step-detail">Agent delivers → result meets the agreed spec</div>
           </div>
         </div>
 
@@ -1075,14 +1075,14 @@
           <div class="step-content">
             <div class="step-label">Release</div>
             <div class="step-title">Split to all parties</div>
-            <div class="step-detail">Agent earns · platform takes fee · creator receives royalty — atomically</div>
+            <div class="step-detail">x402 settles — agent earns · platform takes its fee · creator gets a royalty</div>
           </div>
         </div>
       </div>
     </div>
 
     <p class="timeline-footer">
-      One contract in Stockholm. One API call in the cloud. <em>Same three primitives.</em>
+      One contract in Stockholm. One API call in the cloud. <em>Same three steps.</em>
     </p>
   </div>
 </section>
@@ -1090,7 +1090,7 @@
 <section class="sides" id="sides">
   <div class="container reveal">
     <div class="section-label">Built for both sides</div>
-    <h1 class="sides-headline">One primitive. Humans <em>and</em> agents. Any condition.</h1>
+    <h2 class="sides-headline">One primitive. Humans <em>and</em> agents. Any condition.</h2>
 
     <div class="sides-grid">
       <div class="side-card humans">
@@ -1109,7 +1109,7 @@
       <div class="side-card agents">
         <div class="side-label">For agents</div>
         <h3>Where the transaction <em>is</em> the code.</h3>
-        <p>Agents that earn for completing tasks. Streaming payments per API call. Capability escrow where delivery is machine-verifiable. Revenue splits across multiple agents and their creators. Peyya gives agent commerce the payment primitives it's missing today.</p>
+        <p>Agents that earn for completing tasks. Streaming payments per API call. Capability escrow where the spec decides what counts. Revenue splits across multiple agents and their creators. Peyya gives agent commerce the payment primitives it's missing today.</p>
         <div class="side-tags">
           <span class="side-tag">A2A commerce</span>
           <span class="side-tag">Capability escrow</span>
@@ -1127,7 +1127,7 @@
     <div class="primitives-header">
       <div>
         <div class="section-label">Protocols</div>
-        <h2>Every <em>agent commerce</em> protocol that matters.</h2>
+        <h2>Every <em>agent</em> protocol that matters.</h2>
       </div>
       <p>
         Peyya speaks all five — so you don't have to pick a side. Build on Peyya and your payment logic stays portable as the ecosystem evolves.
@@ -1180,7 +1180,7 @@
       </div>
       <div>
         <p>
-          Peyya solves <em style="color: var(--accent); font-style: italic;">delivery-versus-payment</em> at the protocol level. Funds release when proof arrives — a BankID signature, an API response, an oracle event, another agent's confirmation. Money moves against evidence, not against a promise.
+          With Peyya, the payment and the proof are the <em style="color: var(--accent); font-style: italic;">same moment</em>. Funds move when the agreed thing actually happens — a signed approval, a delivered result, a confirmation from the other agent. Money moves against evidence, not against a promise.
         </p>
         <p>
           The result: no custody risk for you, no trust gap for the counterparty, no brittle middleware between them.
@@ -1223,8 +1223,8 @@
 
     <div id="signup-success" class="signup-success" style="display: none;">
       <div class="success-mark">✓</div>
-      <p class="success-headline">Thank you.</p>
-      <p class="success-detail">We'll be in touch shortly. Keep an eye on your inbox.</p>
+      <p class="success-headline">You're on the list.</p>
+      <p class="success-detail">We'll reach out as we open access to new design partners. Keep an eye on your inbox.</p>
     </div>
   </div>
 </section>
@@ -1292,7 +1292,7 @@
       return;
     }
     if (!isValidEmail(email)) {
-      showError('That doesn\'t look like a valid email. Try again.');
+      showError('That doesn\'t look like a valid email address.');
       return;
     }
 
